@@ -49,7 +49,7 @@ class PrototypesController < ApplicationController
   end
 
   def authenticate_user!
-    unless @prototype_user.id == current_user.id
+    unless user_signed_in?
       redirect_to action: :index
     end
   end
